@@ -1,0 +1,117 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: transparent;
+}
+
+.toolbar {
+  height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 8px;
+  background: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.brand {
+  min-width: 72px;
+  font-weight: 700;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+  opacity: 0.55;
+}
+
+.status {
+  margin-left: auto;
+  min-width: 160px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.layout {
+  height: calc(100% - 42px);
+  min-height: 0;
+  background: transparent;
+}
+
+.workspace {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  background: transparent;
+}
+
+.blocklyToolboxDiv {
+  min-width: 156px;
+}
+
+.blocklyTreeRow {
+  height: 30px;
+  line-height: 30px;
+  margin-bottom: 4px;
+}
+
+.blocklyTreeLabel {
+  font-size: 18px;
+}
+
+.dialog-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.18);
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dialog-overlay[hidden] {
+  display: none;
+}
+
+.dialog {
+  width: min(360px, 100%);
+  padding: 16px;
+  background: #fff;
+  border: 1px solid #c8c8c8;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.24);
+  box-sizing: border-box;
+}
+
+.dialog-message {
+  margin-bottom: 12px;
+  color: #222;
+  line-height: 1.35;
+}
+
+.dialog-input {
+  width: 100%;
+  height: 34px;
+  margin-bottom: 14px;
+  padding: 4px 8px;
+  border: 1px solid #aaa;
+  box-sizing: border-box;
+  font: inherit;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}

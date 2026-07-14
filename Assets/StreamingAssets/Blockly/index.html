@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blockly Unity</title>
+  <link rel="stylesheet" href="styles.css?v=7">
+</head>
+<body>
+  <header class="toolbar">
+    <div class="brand">Blockly</div>
+    <button id="startButton" type="button">Старт</button>
+    <button id="pauseButton" type="button">Пауза</button>
+    <button id="abortButton" type="button">Аборт</button>
+    <span id="status" class="status">готово</span>
+  </header>
+
+  <main class="layout">
+    <section id="blocklyDiv" class="workspace"></section>
+  </main>
+
+  <div id="appDialogOverlay" class="dialog-overlay" hidden>
+    <form id="appDialog" class="dialog" autocomplete="off">
+      <div id="appDialogMessage" class="dialog-message"></div>
+      <input id="appDialogInput" class="dialog-input" type="text" spellcheck="false">
+      <div class="dialog-actions">
+        <button id="appDialogCancel" type="button">Cancel</button>
+        <button id="appDialogOk" type="submit">OK</button>
+      </div>
+    </form>
+  </div>
+
+  <xml id="toolbox" style="display: none">
+    <category name="Логика" categorystyle="logic_category">
+      <block type="controls_if"></block>
+      <block type="logic_compare"></block>
+      <block type="logic_operation"></block>
+      <block type="logic_negate"></block>
+      <block type="logic_boolean"></block>
+      <block type="logic_null"></block>
+    </category>
+    <category name="Циклы" categorystyle="loop_category">
+      <block type="controls_repeat_ext">
+        <value name="TIMES">
+          <shadow type="math_number">
+            <field name="NUM">10</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="controls_whileUntil"></block>
+      <block type="controls_for"></block>
+      <block type="controls_forEach"></block>
+      <block type="controls_flow_statements"></block>
+    </category>
+    <category name="Математика" categorystyle="math_category">
+      <block type="math_number"></block>
+      <block type="math_arithmetic"></block>
+      <block type="math_single"></block>
+      <block type="math_round"></block>
+      <block type="math_number_property"></block>
+      <block type="math_modulo"></block>
+      <block type="math_random_int"></block>
+    </category>
+    <category name="Текст" categorystyle="text_category">
+      <block type="text"></block>
+      <block type="text_print"></block>
+      <block type="text_join"></block>
+      <block type="text_length"></block>
+      <block type="text_isEmpty"></block>
+    </category>
+    <category name="Списки" categorystyle="list_category">
+      <block type="lists_create_with"></block>
+      <block type="lists_repeat"></block>
+      <block type="lists_length"></block>
+      <block type="lists_isEmpty"></block>
+      <block type="lists_indexOf"></block>
+      <block type="lists_getIndex"></block>
+      <block type="lists_setIndex"></block>
+    </category>
+    <sep></sep>
+    <category name="Переменные" custom="VARIABLE" categorystyle="variable_category"></category>
+    <category name="Функции" custom="PROCEDURE" categorystyle="procedure_category"></category>
+    <sep></sep>
+    <category name="API куба" categorystyle="cube_category">
+      <block type="cube_rotate_for">
+        <field name="SPEED">0.5</field>
+        <field name="SECONDS">1</field>
+      </block>
+      <block type="cube_set_rotation_speed"></block>
+    </category>
+  </xml>
+
+  <script src="blockly.min.js"></script>
+  <script src="javascript_compressed.js"></script>
+  <script src="python_compressed.js"></script>
+  <script src="acorn_interpreter.js"></script>
+  <script src="blockly_app.js?v=12"></script>
+</body>
+</html>
